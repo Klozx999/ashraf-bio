@@ -13,9 +13,10 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --gray: #48494b;   /* iron gray */
-      --red:   #6b0f1a;   /* dark Burgundy-wine red */
-      --yellow: #f5c842;  /* warmer gold, reads better on dark halves */
+      --yellow: #6c63ff;
+      --black: #0a0a0d;
+      --gray1: #141418;
+      --gray2: #1f1f25;
       --dark:  #0b0c0f;
       --card:  rgba(255,255,255,0.06);
       --border: rgba(255,255,255,0.10);
@@ -51,20 +52,42 @@
       top: 0; bottom: 0;
       width: 50%;
     }
-    #landing::before {
-      left: 0;
-      background:
-        radial-gradient(circle at 30% 40%, rgba(255,255,255,0.04) 0%, transparent 60%),
-        repeating-linear-gradient(45deg, rgba(255,255,255,0.015) 0px, rgba(255,255,255,0.015) 1px, transparent 1px, transparent 18px),
-        var(--green);
-    }
-    #landing::after {
-      right: 0;
-      background:
-        radial-gradient(circle at 70% 60%, rgba(255,255,255,0.04) 0%, transparent 60%),
-        repeating-linear-gradient(-45deg, rgba(255,255,255,0.015) 0px, rgba(255,255,255,0.015) 1px, transparent 1px, transparent 18px),
-        var(--red);
-    }
+    #landing::before,
+#landing::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+}
+
+/* LEFT SIDE */
+#landing::before {
+  left: 0;
+  background:
+    linear-gradient(135deg, var(--black), var(--gray1), var(--gray2)),
+    repeating-linear-gradient(
+      45deg,
+      rgba(255,255,255,0.03) 0px,
+      rgba(255,255,255,0.03) 1px,
+      transparent 1px,
+      transparent 20px
+    );
+}
+
+/* RIGHT SIDE */
+#landing::after {
+  right: 0;
+  background:
+    linear-gradient(135deg, var(--gray2), var(--gray1), var(--black)),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(255,255,255,0.03) 0px,
+      rgba(255,255,255,0.03) 1px,
+      transparent 1px,
+      transparent 20px
+    );
+}
 
     /* Fade-out state */
     #landing.hidden {
