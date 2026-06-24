@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,18 +12,22 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --yellow: #6c63ff;
-      --black: #0a0a0d;
-      --gray1: #141418;
-      --gray2: #1f1f25;
-      --dark:  #0b0c0f;
-      --card:  rgba(255,255,255,0.06);
-      --border: rgba(255,255,255,0.10);
-      --text:  #e8eaf0;
-      --muted: #7b8099;
-      --accent: #6c63ff;
-    }
+  --dark: #0b0c0f;
+  --card: rgba(255,255,255,0.06);
+  --border: rgba(255,255,255,0.10);
+  --text: #e8eaf0;
+  --muted: #7b8099;
 
+  --accent: #6c63ff;
+
+  /* landing colors */
+  --black: #0a0a0d;
+  --gray1: #141418;
+  --gray2: #1f1f25;
+
+  /* button (purple instead of yellow) */
+  --yellow: #6c63ff;
+}
     html, body {
       height: 100%;
       font-family: 'Space Grotesk', sans-serif;
@@ -52,7 +55,7 @@
       top: 0; bottom: 0;
       width: 50%;
     }
-    #landing::before,
+#landing::before,
 #landing::after {
   content: '';
   position: absolute;
